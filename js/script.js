@@ -90,3 +90,51 @@ function asideSectionTogglerBtn()
       allSection[i].classList.toggle("open");
     }
 }
+/* ======================= Contact Form Handling ===================== */
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    const formMessage = document.getElementById('formMessage');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn.textContent;
+  
+    // Show loading state
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+  
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        showFormMessage('Message sent successfully!', 'success');
+        form.reset();
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    })
+    .catch(error => {
+      showFormMessage('Error sending message. Please try again.', 'error');
+    })
+    .finally(() => {
+      submitBtn.textContent = originalBtnText;
+      submitBtn.disabled = false;
+    });
+  });
+  
+  function showFormMessage(message, type) {
+    const formMessage = document.getElementById('formMessage');
+    formMessage.textContent = message;
+    formMessage.style.display = 'block';
+    formMessage.style.color = type === 'success' ? 'green' : 'red';
+    
+    setTimeout(() => {
+      formMessage.style.display = 'none';
+    }, 5000);
+  }

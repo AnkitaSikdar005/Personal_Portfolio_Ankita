@@ -984,3 +984,18 @@ h3.my-profession {
       flex-direction: column;
    }
 }
+/* Contact Form Messages */
+.form-message {
+   padding: 10px 20px;
+   margin: 15px 0;
+   border-radius: 5px;
+   text-align: center;
+   width: 100%;
+   background-color: var(--bg-black-50);
+ }
+ 
+ /* Loading state */
+ .btn[disabled] {
+   opacity: 0.7;
+   cursor: not-allowed;
+ }

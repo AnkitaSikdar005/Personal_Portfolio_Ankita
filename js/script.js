@@ -137,4 +137,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     setTimeout(() => {
       formMessage.style.display = 'none';
     }, 5000);
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> a3caf04bf179f4e7bde3e3d3fa48dce24600928b

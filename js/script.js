@@ -127,7 +127,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
       submitBtn.disabled = false;
     });
   });
-  
   function showFormMessage(message, type) {
     const formMessage = document.getElementById('formMessage');
     formMessage.textContent = message;
@@ -135,10 +134,8 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     formMessage.style.color = type === 'success' ? 'green' : 'red';
     
     setTimeout(() => {
-      formMessage.style.display = 'none';
+        formMessage.style.display = 'none';
     }, 5000);
-<<<<<<< HEAD
-  }
-=======
-  }
->>>>>>> a3caf04bf179f4e7bde3e3d3fa48dce24600928b
+}
+
+

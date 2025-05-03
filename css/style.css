@@ -145,7 +145,7 @@ ul {
    margin-left: -15px;
    margin-right: 15px;
    position: relative;
-   justify-content: space-between;
+   /* justify-content: space-between; */
 }
 
 .call-email {
